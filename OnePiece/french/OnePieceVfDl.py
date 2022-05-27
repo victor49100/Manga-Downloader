@@ -5,10 +5,10 @@ import os
 import sys
 ## Set up the image URL and filename
 
-
 arg = sys.argv
 
-def DlOnePieceVf (Tome):
+def DlOnePieceVf ():
+    Tome = int(input("Quel est le chapitre à télécharger ?: "))
     dirname = ("OnePiece"+str(Tome))
     if not os.path.exists('OnePieceVf'):
         os.makedirs("OnePieceVf")
@@ -68,4 +68,4 @@ def DlOnePieceVf (Tome):
                 break
 
             
-print(DlOnePieceVf(1050))
+print(DlOnePieceVf())
