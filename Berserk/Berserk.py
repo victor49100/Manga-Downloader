@@ -5,9 +5,9 @@ import sys
 ## Set up the image URL and filename
 
 
-arg = sys.argv
-
-def DlOnePieceVf (Tome):
+def DlOnePieceVf ():
+    
+    Tome = int(input("Quel est le Tome à télécharger ?: "))
     dirname = ("Berserk"+str(Tome))
     if not os.path.exists('Berserk'):
         os.makedirs("Berserk")
@@ -20,7 +20,7 @@ def DlOnePieceVf (Tome):
         os.mkdir(dirname)
         os.chdir(dirname)
 
-    for page in range (1,300):
+    for page in range (1,400):
         if page<10:
             idp = str("0"+str(page))
         else:
@@ -63,4 +63,4 @@ def DlOnePieceVf (Tome):
                 break
 
             
-print(DlOnePieceVf(11))
+print(DlOnePieceVf())
