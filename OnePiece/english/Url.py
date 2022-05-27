@@ -1,12 +1,3 @@
-#11 04 90 00 = 1049
-#11 04 00 00 = 1040
-#10 99 90 00 = 999
-#10 10 00 00 = 100
-#10 01 00 00 = 10
-#10 00 10 00 = 1
-#l1 l2 l3 XX
-#https://cdn.readonepiece.com/file/mangap/2/10110000/1.jpeg
-
 def ConvertUrlToTome (tome):
     l1 = "10"
     l2 = "00"
