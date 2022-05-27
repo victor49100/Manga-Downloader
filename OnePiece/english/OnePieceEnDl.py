@@ -5,7 +5,8 @@ import sys
 import Url
 ## Set up the image URL and filename
 
-def DlOnePieceVf (Tome):
+def DlOnePieceVf ():
+    Tome = int(input("Which chapter is your download?: ")) 
     if not os.path.exists('One_PieceEn'):
         os.makedirs("One_PieceEn")
     os.chdir('One_PieceEn')
@@ -18,15 +19,16 @@ def DlOnePieceVf (Tome):
 
     for page in range (1,300):
         image_url = Url.ConvertUrlToTome(Tome)
-        if Tome > 1040:
+        if Tome > 1049:
             if page <2:
                 image_url = image_url.replace("X",("0"+str(page)))
             if page > 1 and page < 10:
                 image_url = image_url.replace("X",("00"+str(page)))
+            if page > 9:
+                image_url = image_url.replace("X",("0"+str(page)))
 
         else:
             image_url = image_url.replace("X",str(page))
-        print(image_url)
         filename = image_url.split("/")[-1]
         # Open the url image, set stream to True, this will return the stream content.
         r = requests.get(image_url, stream = True)
@@ -45,4 +47,4 @@ def DlOnePieceVf (Tome):
             print('Manga not found',image_url)
             break
 
-print(DlOnePieceVf(1050))
+print(DlOnePieceVf())
